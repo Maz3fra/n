@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prank Alert</title>
+    <style>
+        body {
+            background-color: white; /* White background */
+            color: black; /* Text color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full height */
+            font-family: Arial, sans-serif; /* Font style */
+            text-align: center; /* Center text */
+            overflow: hidden; /* No scrolling */
+            cursor: pointer; /* Pointer cursor for clicks */
+        }
+    </style>
+</head>
+<body onclick="showPrankAlerts()"> <!-- Trigger alerts on click -->
+    <audio id="alertSound" src="https://www.soundjay.com/button/beep-07.wav" preload="auto"></audio>
+    <script>
+        function showPrankAlerts() {
+            let continuePrank = true;
+
+            while (continuePrank) {
+                const firstResponse = confirm("Dangerous virus detected. Do you want to delete the virus?");
+                
+                if (firstResponse) {
+                    document.getElementById("alertSound").play();
+                    alert("System unable to clean the virus.");
+                    document.getElementById("alertSound").play(); // Play sound again
+                    alert("Your iPhone is hacked!");
+                    document.getElementById("alertSound").play(); // Play sound again
+                    alert("Formatting the iPhone...");
+                    document.getElementById("alertSound").play(); // Play sound again
+                    alert("Deleting all system files...");
+                } else {
+                    alert("ACTION NEEDED. YOUR IPHONE IS NOT SAFE!!");
+                }
+
+                // Ask if they want to continue or stop
+                continuePrank = confirm("Click Cancel to stop the alerts.");
+            }
+
+            alert("It was just a prank! LOVE YOU");
+        }
+    </script>
+</body>
+</html>
